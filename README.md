@@ -7,7 +7,7 @@ trick them to write some code).
 ## Using
 
 Open `index.html` in your favourite browser. Marvel at the
-planets spinning around earth.
+planets spinning around the sun.
 
 ## Modifying
 
