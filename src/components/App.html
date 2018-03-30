@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="columns col-gapless">
+    <div class="column col-9">
+      <Renderer world='{{world}}'/>
+    </div>
+    <div class="column col-3">
+      <Sidebar world='{{world}}'/>
+    </div>
+  </div>
+</div>
+
+<script>
+import Renderer from './Renderer.html'
+import Sidebar from './Sidebar.html'
+
+export default {
+  oncreate () {
+    var lastT = +new Date()
+    const step = () => {
+      const t = +new Date()
+      const dt = (t - lastT) * 10000
+      this.get('world').step(dt)
+      lastT = t
+    }
+    window.setInterval(step, 0)
+  },
+
+  components: {
+    Renderer,
+    Sidebar
+  }
+}
+</script>

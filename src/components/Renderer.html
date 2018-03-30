@@ -1,0 +1,73 @@
+<:Window on:keydown='onKey(event)' />
+<canvas ref:canvas></canvas>
+
+<script>
+export default {
+  oncreate () {
+    const canvas = this.refs.canvas
+    const parent = canvas.parentElement
+    canvas.width = parent.clientWidth
+    canvas.height = parent.clientHeight
+    this.context = canvas.getContext('2d')
+    this.clear()
+
+    const world = this.get('world')
+
+    const maxC = world.entities.reduce((max, e) => Math.max(max, Math.max(e.x, e.y)), 0)
+
+    this.set({scale: Math.min(canvas.width, canvas.height) / (maxC * 1.2)})
+    this.set({centerX: 0})
+    this.set({centerY: 0})
+
+    window.requestAnimationFrame(() => this.render())
+  },
+  methods: {
+    clear () {
+      const canvas = this.refs.canvas
+      this.context.setTransform(1, 0, 0, 1, 0, 0)
+      this.context.fillStyle = '#454d5d'
+      this.context.fillRect(0, 0, canvas.width, canvas.height)
+      this.context.fillStyle = 'rgba(255, 255, 255, 0.1)'
+    },
+    onKey (e) {
+      switch (e.key) {
+        case '+':
+          this.set({scale: this.get('scale') * 2})
+          this.clear()
+          break
+        case '-':
+          this.set({scale: this.get('scale') / 2})
+          this.clear()
+          break
+      }
+    },
+    render () {
+      const world = this.get('world')
+      const canvas = this.refs.canvas
+      this.context.setTransform(1, 0, 0, 1, 0, 0)
+      //  this.context.clearRect(0, 0, canvas.width, canvas.height);
+
+      const centerX = world.entities[0].x
+      const centerY = world.entities[0].y
+      const scale = this.get('scale')
+
+      this.context.setTransform(1, 0, 0, -1, canvas.width / 2, canvas.height / 2)
+      for (let i = 0; i < world.entities.length; i++) {
+        const e = world.entities[i]
+        const vx = (e.x - centerX) * scale
+        const vy = (e.y - centerY) * scale
+
+        this.context.fillRect(vx, vy, 1, 1)
+      }
+
+      window.requestAnimationFrame(() => this.render())
+    }
+  }
+}
+</script>
+
+<style>
+  canvas {
+    min-height: 100vh;
+  }
+</style>

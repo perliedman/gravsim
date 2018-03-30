@@ -1,0 +1,34 @@
+{
+  "name": "gravsim",
+  "version": "1.0.0",
+  "description": "An _extremely_ crude gravitational simulator I hacked together to teach my kids about gravity and our solar system (and also trick them to write some code).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perliedman/gravsim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perliedman/gravsim/issues"
+  },
+  "homepage": "https://github.com/perliedman/gravsim#readme",
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "rollup": "^0.57.1",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-svelte": "^4.0.0",
+    "svelte": "^1.57.4"
+  }
+}

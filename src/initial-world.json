@@ -1,0 +1,15 @@
+{
+  "entities": [
+    { "name": "Sun", "x": 0, "y": 0, "vx": 0, "vy": -4e3, "mass": 1.98856e30 },
+    { "name": "Mercury", "x": 69.8e9, "y": 0, "vx": 0, "vy": 47.4e3, "mass": 0.333e24 },   
+    { "name": "Venus", "x": 108.9e9, "y": 0, "vx": 0, "vy": 35e3, "mass": 4.87e25 },
+    { "name": "Tellus", "x": 152.10e9, "y": 0, "vx": 0, "vy": 29.8e3, "mass": 5.25e2 },  
+    { "name": "Mars", "x": 249.2e9, "y": 0, "vx": 0, "vy": 24.1e3, "mass": 0.642e24 },  
+    { "name": "Jupiter", "x": 816.6e9, "y": 0, "vx": 0, "vy": 13.1e3, "mass": 1898e24 },   
+    { "name": "Saturn", "x": 1514.5e9, "y": 0, "vx": 0, "vy": 9.7e3, "mass": 568e24 },    
+    { "name": "Neptune", "x": 4545.7e9, "y": 0, "vx": 0, "vy": 5.4e3, "mass": 102e24 },    
+    { "name": "Uranus", "x": 3003.6e9, "y": 0, "vx": 0, "vy": 6.8e3, "mass": 86.8e24 },   
+    { "name": "Pluto", "x": 7375.9e9, "y": 0, "vx": 0, "vy": 4.7e3, "mass": 0.0146e26 },
+    { "name": "Sun2", "x": 916.6e9, "y": 0, "vx": 0, "vy": 4e3, "mass": 1.98856e30 }
+  ]
+}
